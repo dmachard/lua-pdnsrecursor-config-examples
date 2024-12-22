@@ -3,14 +3,14 @@
 LUA scripts examples for Recursor PowerDNS 
 
 **Miscs**:
-- [Get EDNS option](./miscs_read_edns.lua)
+- [Get private EDNS option and set RequestorID ](./miscs_read_edns.lua)
 
 # Run config from docker
 
 Start
 
 ```bash
-sudo docker run -d -p 8053:53/udp -p 8053:53/tcp -p 8082:8082 --name=recursor -v ./recursor.yml:/etc/powerdns/recursor.yml -v ./script.lua:/etc/powerdns/script.lua powerdns/pdns-recursor-51:5.1.3
+sudo docker run -d -p 8053:53/udp -p 8053:53/tcp -p 8082:8082 --name=recursor -v ./recursor.yml:/etc/powerdns/recursor.yml -v ./script.lua:/etc/powerdns/script.lua -v ./basic.rpz:/etc/powerdns/basic.rpz powerdns/pdns-recursor-51:5.1.3
 ```
 
 Reload configuration

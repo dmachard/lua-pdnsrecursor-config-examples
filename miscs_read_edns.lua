@@ -34,6 +34,7 @@ function gettag_ffi(obj)
 
   local uniqId = getUniqIdFromEDNS(obj)
   if uniqId then
+    ffi.C.pdns_ffi_param_set_requestorid(obj, uniqId)
     pdnslog("Qname: " .. qname .. "UniqID: " .. uniqId, pdns.loglevels.Info)
   else
     pdnslog("UniqID not detected for " .. qname, pdns.loglevels.Warning)

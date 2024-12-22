@@ -2,6 +2,12 @@ recursor:
   include_dir: /etc/powerdns/recursor.d
   server_id: recursor
   lua_dns_script: /etc/powerdns/script.lua
+  forward_zones_recurse:
+    - zone: "facebook.com"
+      forwarders:
+        - '8.8.8.8'
+  rpzs:
+    - name: '/etc/powerdns/basic.rpz'
 
 webservice:
   webserver: true

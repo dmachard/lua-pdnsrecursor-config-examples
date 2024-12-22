@@ -1,0 +1,6 @@
+$TTL 2h;
+$ORIGIN domain.example.com.
+@               SOA powerdns.example.net. hostmaster.example.com ( 1 12h 15m 3w 2h)
+                NS powerdns.example.net.  
+local-a.org        A 192.168.2.5
+*.local-a.org      A 192.168.2.5
