@@ -1,0 +1,37 @@
+recursor:
+  include_dir: /etc/powerdns/recursor.d
+  server_id: recursor
+  lua_dns_script: /etc/powerdns/script.lua
+
+webservice:
+  webserver: true
+  allow_from: 
+  - 0.0.0.0/0
+  - ::/0
+  password: open
+  api_key: open
+  address: 0.0.0.0
+  port: 8082
+
+incoming:
+  gettag_needs_edns_options: true
+  listen:
+  - 0.0.0.0:53
+  - '[::]:53'
+  allow_from:
+  - 0.0.0.0/0
+  - ::/0
+
+logging:
+  protobuf_servers:
+  - servers: [192.168.1.16:6000]
+    logQueries: true
+    logResponses: true
+  outgoing_protobuf_servers:
+  - servers: [192.168.1.16:6000]
+    logQueries: true
+    logResponses: true
+  dnstap_framestream_servers:
+   - servers: [192.168.1.16:6000]
+     logQueries: true
+     logResponses: true
