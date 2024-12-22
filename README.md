@@ -1,4 +1,4 @@
-# # LUA Scripts for Recursor
+## LUA Scripts for Recursor
 
 LUA scripts examples for Recursor PowerDNS 
 
